@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Satisfy&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  
+  /* Brand Colors */
+  --color-primary: #0F4C81; /* Deep Navy */
+  --color-primary-hover: #0c3e69;
+  --color-secondary: #D4AF37; /* Premium Gold */
+  
+  /* Backgrounds */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8fafc;
+  --color-bg-tertiary: #f1f5f9;
+  
+  /* Text */
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+  
+  /* Borders */
+  --color-border-subtle: #e2e8f0;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+    font-family: var(--font-sans);
+  }
+  
+  body {
+    @apply text-base antialiased bg-[var(--color-bg-secondary)] text-[var(--color-text-primary)];
+  }
+}
+
+@layer utilities {
+  .shadow-soft {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+  .shadow-hover {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  }
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border-b border-white/20;
+  }
+}
+
+@keyframes marquee { 
+  0% { transform: translateX(0%); } 
+  100% { transform: translateX(-100%); } 
+} 
+
+.animate-marquee { 
+  animation: marquee 25s linear infinite; 
+}
